@@ -5,6 +5,11 @@ from setuptools import setup
 from trialosxnotifier import __version__
 
 
+def refresh_plugin_cache():
+    from twisted.plugin import IPlugin, getPlugins
+    list(getPlugins(IPlugin))
+
+
 with open(os.path.join(os.path.dirname(__file__), "README.rst")) as readme:
     long_description = readme.read()
 
@@ -26,8 +31,9 @@ classifiers = [
 setup(
     name="trial-osxnotifier",
     version=__version__,
-    packages=["twisted"],
     py_modules=["trialosxnotifier"],
+    packages=["twisted.plugins"],
+    package_data={"twisted" : ["plugins/trial_osxnotify.py"]},
     author="Julian Berman",
     author_email="Julian@GrayVines.com",
     classifiers=classifiers,
@@ -36,3 +42,5 @@ setup(
     long_description=long_description,
     url="https://github.com/Julian/trial-osxnotifier",
 )
+
+refresh_plugin_cache()
