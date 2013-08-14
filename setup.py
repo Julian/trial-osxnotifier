@@ -34,6 +34,7 @@ setup(
     py_modules=["trialosxnotifier"],
     packages=["twisted.plugins"],
     package_data={"twisted" : ["plugins/trial_osxnotify.py"]},
+    install_requires=["pyobjc-core"],
     author="Julian Berman",
     author_email="Julian@GrayVines.com",
     classifiers=classifiers,
