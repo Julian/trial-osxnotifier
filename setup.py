@@ -2,8 +2,6 @@ import os
 
 from setuptools import setup
 
-from trialosxnotifier import __version__
-
 
 def refresh_plugin_cache():
     from twisted.plugin import IPlugin, getPlugins
@@ -30,7 +28,7 @@ classifiers = [
 
 setup(
     name="trial-osxnotifier",
-    version=__version__,
+    version="0.1.4",
     py_modules=["trialosxnotifier"],
     packages=["twisted.plugins"],
     package_data={"twisted" : ["plugins/trial_osxnotify.py"]},

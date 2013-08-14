@@ -4,7 +4,7 @@ from twisted.trial.reporter import VerboseTextReporter
 import objc
 
 
-__version__ = "0.1.3"
+__version__ = "0.1.4"
 
 
 NSUserNotification = objc.lookUpClass("NSUserNotification")
