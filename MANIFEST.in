@@ -1,1 +1,5 @@
 graft twisted
+include *.rst
+include COPYING
+include pyproject.toml
+include tox.ini
