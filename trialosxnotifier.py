@@ -1,5 +1,3 @@
-import time
-
 from twisted.trial.reporter import VerboseTextReporter
 import objc
 
@@ -42,5 +40,7 @@ def notify(title, subtitle=None):
     if subtitle:
         notification.setSubtitle_(str(subtitle))
 
-    notification_center = NSUserNotificationCenter.defaultUserNotificationCenter()
+    notification_center = (
+        NSUserNotificationCenter.defaultUserNotificationCenter()
+    )
     notification_center.deliverNotification_(notification)
